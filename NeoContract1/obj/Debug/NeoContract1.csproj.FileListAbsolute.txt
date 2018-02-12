@@ -1,0 +1,7 @@
+c:\users\ludwig\source\repos\NeoContract1\NeoContract1\bin\Debug\NeoContract1.dll
+c:\users\ludwig\source\repos\NeoContract1\NeoContract1\bin\Debug\NeoContract1.pdb
+c:\users\ludwig\source\repos\NeoContract1\NeoContract1\bin\Debug\Neo.SmartContract.Framework.dll
+c:\users\ludwig\source\repos\NeoContract1\NeoContract1\obj\Debug\NeoContract1.csprojResolveAssemblyReference.cache
+c:\users\ludwig\source\repos\NeoContract1\NeoContract1\obj\Debug\NeoContract1.csproj.CoreCompileInputs.cache
+c:\users\ludwig\source\repos\NeoContract1\NeoContract1\obj\Debug\NeoContract1.dll
+c:\users\ludwig\source\repos\NeoContract1\NeoContract1\obj\Debug\NeoContract1.pdb
