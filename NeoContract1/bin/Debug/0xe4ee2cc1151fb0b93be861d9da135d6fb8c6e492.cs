@@ -27,15 +27,11 @@ namespace Neo.SmartContract
             }
         }
         
-        private static Boolean Balance(byte[] publicHash, byte[] owner)
+        private static string Balance(byte[] publicHash, byte[] owner)
         {
-            Account acc = Blockchain.GetAccount(publicHash);
-            byte[] value = Storage.Get(Storage.CurrentContext, "tesasdasdt");
-            if (value != null) return true;
-            return false;
-            
             //Asset ass = Blockchain.GetAsset(owner);
-            //return ass.Amount;
+            return "tzest";
+            
             //return Storage.Get(Storage.CurrentContext, publicHash.Concat(owner)).AsBigInteger();
         }
         private static byte[] Query(string domain)
