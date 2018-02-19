@@ -2,6 +2,6 @@
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
     <StartAction>Program</StartAction>
-    <StartProgram>C:\Users\Administrator\Documents\GitHub\neo-debugger-tools\NEO-Debugger\bin\Debug\neod.exe</StartProgram>
+    <StartProgram>C:\Users\Ludwig\Documents\GitHub\neo-debugger-tools\NEO-Debugger\bin\Debug\neod.exe</StartProgram>
   </PropertyGroup>
 </Project>
