@@ -1,1 +1,0 @@
-{"hash":"0xe4ee2cc1151fb0b93be861d9da135d6fb8c6e492","entrypoint":"Main","functions":[{"name":"Main","parameters":[{"name":"operation","type":"String"},{"name":"args","type":"Array"}],"returntype":"Any"}],"events":[]}
