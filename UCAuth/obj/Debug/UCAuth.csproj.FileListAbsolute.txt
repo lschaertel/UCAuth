@@ -1,0 +1,6 @@
+C:\Users\Ludwig\Documents\GitHub\UCAuth\UCAuth\obj\Debug\UCAuth.csproj.CoreCompileInputs.cache
+C:\Users\Ludwig\Documents\GitHub\UCAuth\UCAuth\obj\Debug\NeoContract1.dll
+C:\Users\Ludwig\Documents\GitHub\UCAuth\UCAuth\obj\Debug\NeoContract1.pdb
+C:\Users\Ludwig\Documents\GitHub\UCAuth\UCAuth\bin\Debug\NeoContract1.dll
+C:\Users\Ludwig\Documents\GitHub\UCAuth\UCAuth\bin\Debug\NeoContract1.pdb
+C:\Users\Ludwig\Documents\GitHub\UCAuth\UCAuth\bin\Debug\Neo.SmartContract.Framework.dll

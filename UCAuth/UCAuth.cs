@@ -3,11 +3,10 @@ using Neo.SmartContract.Framework.Services.Neo;
 using Neo.SmartContract.Framework.Services.System;
 using System;
 using System.Numerics;
-using System.Security.Cryptography;
 
 namespace Neo.SmartContract
 {
-    public class Contract1 : Framework.SmartContract
+    public class UCAuth : Framework.SmartContract
     {
         public static object Main(string operation, params object[] args)
         {

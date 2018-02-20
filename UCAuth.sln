@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NeoContract1", "NeoContract1\NeoContract1.csproj", "{6D781590-3CF5-4180-BDBB-CF61B3264547}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UCAuth", "UCAuth\UCAuth.csproj", "{6D781590-3CF5-4180-BDBB-CF61B3264547}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
