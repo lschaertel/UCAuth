@@ -8,8 +8,8 @@
     <ProjectGuid>{6D781590-3CF5-4180-BDBB-CF61B3264547}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>NeoContract1</RootNamespace>
-    <AssemblyName>NeoContract1</AssemblyName>
+    <RootNamespace>UCAuth</RootNamespace>
+    <AssemblyName>UCAuth</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

@@ -1,8 +1,8 @@
 {
     "avm":
     {
-        "name":"NeoContract1",
-        "hash":"EF946E908242D37DDD8E8F9D2D9FC1AC"
+        "name":"UCAuth",
+        "hash":"C9F92DFF613DFDF4098B8C89B26E0F9C"
     },
     "compiler":
     {
@@ -22,775 +22,775 @@
             "start":0,
             "end":0,
             "file":1,
-            "line":13
+            "line":12
         },
         {
             "start":18,
             "end":114,
             "file":1,
-            "line":14
+            "line":13
         },
         {
             "start":117,
             "end":143,
             "file":1,
-            "line":17
+            "line":16
         },
         {
             "start":146,
             "end":164,
             "file":1,
-            "line":19
+            "line":18
         },
         {
             "start":167,
             "end":193,
             "file":1,
-            "line":21
+            "line":20
         },
         {
             "start":196,
             "end":222,
             "file":1,
-            "line":23
+            "line":22
         },
         {
             "start":225,
             "end":233,
             "file":1,
-            "line":25
+            "line":24
         },
         {
             "start":236,
             "end":261,
             "file":1,
-            "line":27
+            "line":26
         },
         {
             "start":262,
             "end":262,
             "file":1,
-            "line":30
+            "line":29
         },
         {
             "start":263,
             "end":274,
             "file":1,
-            "line":31
+            "line":30
         },
         {
             "start":275,
             "end":288,
             "file":1,
-            "line":32
+            "line":31
         },
         {
             "start":289,
             "end":302,
             "file":1,
-            "line":33
+            "line":32
         },
         {
             "start":303,
             "end":316,
             "file":1,
-            "line":34
+            "line":33
         },
         {
             "start":317,
             "end":372,
             "file":1,
-            "line":38
+            "line":37
         },
         {
             "start":373,
             "end":392,
             "file":1,
-            "line":40
+            "line":39
         },
         {
             "start":395,
             "end":395,
             "file":1,
-            "line":41
+            "line":40
         },
         {
             "start":396,
             "end":448,
             "file":1,
-            "line":42
+            "line":41
         },
         {
             "start":449,
             "end":504,
             "file":1,
-            "line":43
+            "line":42
         },
         {
             "start":505,
             "end":506,
             "file":1,
-            "line":44
+            "line":43
         },
         {
             "start":509,
             "end":509,
             "file":1,
-            "line":46
+            "line":45
         },
         {
             "start":510,
             "end":523,
             "file":1,
-            "line":47
+            "line":46
         },
         {
             "start":524,
             "end":524,
             "file":1,
-            "line":48
+            "line":47
         },
         {
             "start":525,
             "end":574,
             "file":1,
-            "line":49
+            "line":48
         },
         {
             "start":575,
             "end":618,
             "file":1,
-            "line":50
+            "line":49
         },
         {
             "start":619,
             "end":669,
             "file":1,
-            "line":51
+            "line":50
         },
         {
             "start":670,
             "end":687,
             "file":1,
-            "line":53
+            "line":52
         },
         {
             "start":688,
             "end":705,
             "file":1,
-            "line":54
+            "line":53
         },
         {
             "start":706,
             "end":729,
             "file":1,
-            "line":56
+            "line":55
         },
         {
             "start":732,
             "end":732,
             "file":1,
-            "line":57
+            "line":56
         },
         {
             "start":733,
             "end":754,
             "file":1,
-            "line":58
+            "line":57
         },
         {
             "start":755,
             "end":776,
             "file":1,
-            "line":59
+            "line":58
         },
         {
             "start":777,
             "end":804,
             "file":1,
-            "line":60
+            "line":59
         },
         {
             "start":805,
             "end":831,
             "file":1,
-            "line":61
+            "line":60
         },
         {
             "start":832,
             "end":887,
             "file":1,
-            "line":63
+            "line":62
         },
         {
             "start":888,
             "end":943,
             "file":1,
-            "line":64
+            "line":63
         },
         {
             "start":944,
             "end":999,
             "file":1,
-            "line":65
+            "line":64
         },
         {
             "start":1000,
             "end":1055,
             "file":1,
-            "line":66
+            "line":65
         },
         {
             "start":1056,
             "end":1111,
             "file":1,
-            "line":67
+            "line":66
         },
         {
             "start":1112,
             "end":1157,
             "file":1,
-            "line":69
+            "line":68
         },
         {
             "start":1158,
             "end":1205,
             "file":1,
-            "line":70
+            "line":69
         },
         {
             "start":1206,
             "end":1257,
             "file":1,
-            "line":71
+            "line":70
         },
         {
             "start":1258,
             "end":1266,
             "file":1,
-            "line":73
+            "line":72
         },
         {
             "start":1269,
             "end":1277,
             "file":1,
-            "line":75
+            "line":74
         },
         {
             "start":1280,
             "end":1291,
             "file":1,
-            "line":76
+            "line":75
         },
         {
             "start":1292,
             "end":1292,
             "file":1,
-            "line":78
+            "line":77
         },
         {
             "start":1293,
             "end":1301,
             "file":1,
-            "line":81
+            "line":78
         },
         {
             "start":1304,
             "end":1315,
             "file":1,
-            "line":82
+            "line":79
         },
         {
             "start":1316,
             "end":1316,
             "file":1,
-            "line":84
+            "line":81
         },
         {
             "start":1317,
             "end":1325,
             "file":1,
-            "line":86
+            "line":83
         },
         {
             "start":1328,
             "end":1346,
             "file":1,
-            "line":87
+            "line":84
         },
         {
             "start":1347,
             "end":1347,
             "file":1,
-            "line":91
+            "line":88
         },
         {
             "start":1348,
             "end":1355,
             "file":1,
-            "line":92
+            "line":89
         },
         {
             "start":1356,
             "end":1367,
             "file":1,
-            "line":93
+            "line":90
         },
         {
             "start":1368,
             "end":1423,
             "file":1,
-            "line":94
+            "line":91
         },
         {
             "start":1424,
             "end":1439,
             "file":1,
-            "line":95
+            "line":92
         },
         {
             "start":1440,
             "end":1490,
             "file":1,
-            "line":97
+            "line":94
         },
         {
             "start":1491,
             "end":1500,
             "file":1,
-            "line":99
+            "line":96
         },
         {
             "start":1503,
             "end":1503,
             "file":1,
-            "line":100
+            "line":97
         },
         {
             "start":1504,
             "end":1521,
             "file":1,
-            "line":101
+            "line":98
         },
         {
             "start":1522,
             "end":1581,
             "file":1,
-            "line":102
+            "line":99
         },
         {
             "start":1582,
             "end":1595,
             "file":1,
-            "line":104
+            "line":101
         },
         {
             "start":1596,
             "end":1609,
             "file":1,
-            "line":105
+            "line":102
         },
         {
             "start":1610,
             "end":1610,
             "file":1,
-            "line":106
+            "line":103
         },
         {
             "start":1611,
             "end":1634,
             "file":1,
-            "line":99
+            "line":96
         },
         {
             "start":1637,
             "end":1649,
             "file":1,
-            "line":108
+            "line":105
         },
         {
             "start":1652,
             "end":1670,
             "file":1,
-            "line":109
+            "line":106
         },
         {
             "start":1671,
             "end":1671,
             "file":1,
-            "line":112
+            "line":109
         },
         {
             "start":1672,
             "end":1727,
             "file":1,
-            "line":113
+            "line":110
         },
         {
             "start":1728,
             "end":1747,
             "file":1,
-            "line":114
+            "line":111
         },
         {
             "start":1750,
             "end":1758,
             "file":1,
-            "line":114
+            "line":111
         },
         {
             "start":1761,
             "end":1769,
             "file":1,
-            "line":115
+            "line":112
         },
         {
             "start":1772,
             "end":1797,
             "file":1,
-            "line":116
+            "line":113
         },
         {
             "start":1798,
             "end":1798,
             "file":1,
-            "line":119
+            "line":116
         },
         {
             "start":1799,
             "end":1810,
             "file":1,
-            "line":120
+            "line":117
         },
         {
             "start":1811,
             "end":1824,
             "file":1,
-            "line":121
+            "line":118
         },
         {
             "start":1825,
             "end":1886,
             "file":1,
-            "line":122
+            "line":119
         },
         {
             "start":1887,
             "end":1906,
             "file":1,
-            "line":123
+            "line":120
         },
         {
             "start":1909,
             "end":1917,
             "file":1,
-            "line":123
+            "line":120
         },
         {
             "start":1920,
             "end":1928,
             "file":1,
-            "line":125
+            "line":122
         },
         {
             "start":1929,
             "end":1940,
             "file":1,
-            "line":126
+            "line":123
         },
         {
             "start":1941,
             "end":2006,
             "file":1,
-            "line":127
+            "line":124
         },
         {
             "start":2007,
             "end":2072,
             "file":1,
-            "line":128
+            "line":125
         },
         {
             "start":2073,
             "end":2085,
             "file":1,
-            "line":130
+            "line":127
         },
         {
             "start":2088,
             "end":2113,
             "file":1,
-            "line":131
+            "line":128
         },
         {
             "start":2114,
             "end":2114,
             "file":1,
-            "line":133
+            "line":130
         },
         {
             "start":2115,
             "end":2126,
             "file":1,
-            "line":134
+            "line":131
         },
         {
             "start":2127,
             "end":2140,
             "file":1,
-            "line":135
+            "line":132
         },
         {
             "start":2141,
             "end":2202,
             "file":1,
-            "line":136
+            "line":133
         },
         {
             "start":2203,
             "end":2252,
             "file":1,
-            "line":137
+            "line":134
         },
         {
             "start":2253,
             "end":2272,
             "file":1,
-            "line":138
+            "line":135
         },
         {
             "start":2275,
             "end":2283,
             "file":1,
-            "line":138
+            "line":135
         },
         {
             "start":2286,
             "end":2307,
             "file":1,
-            "line":140
+            "line":137
         },
         {
             "start":2308,
             "end":2329,
             "file":1,
-            "line":141
+            "line":138
         },
         {
             "start":2330,
             "end":2357,
             "file":1,
-            "line":142
+            "line":139
         },
         {
             "start":2358,
             "end":2384,
             "file":1,
-            "line":143
+            "line":140
         },
         {
             "start":2385,
             "end":2437,
             "file":1,
-            "line":145
+            "line":142
         },
         {
             "start":2438,
             "end":2496,
             "file":1,
-            "line":146
+            "line":143
         },
         {
             "start":2497,
             "end":2549,
             "file":1,
-            "line":147
+            "line":144
         },
         {
             "start":2550,
             "end":2602,
             "file":1,
-            "line":148
+            "line":145
         },
         {
             "start":2603,
             "end":2704,
             "file":1,
-            "line":152
+            "line":149
         },
         {
             "start":2705,
             "end":2726,
             "file":1,
-            "line":154
+            "line":151
         },
         {
             "start":2727,
             "end":2735,
             "file":1,
-            "line":156
+            "line":153
         },
         {
             "start":2738,
             "end":2771,
             "file":1,
-            "line":157
+            "line":154
         },
         {
             "start":2772,
             "end":2772,
             "file":1,
-            "line":160
+            "line":157
         },
         {
             "start":2773,
             "end":2828,
             "file":1,
-            "line":161
+            "line":158
         },
         {
             "start":2829,
             "end":2850,
             "file":1,
-            "line":162
+            "line":159
         },
         {
             "start":2851,
             "end":2868,
             "file":1,
-            "line":163
+            "line":160
         },
         {
             "start":2869,
             "end":2930,
             "file":1,
-            "line":164
+            "line":161
         },
         {
             "start":2931,
             "end":2954,
             "file":1,
-            "line":166
+            "line":163
         },
         {
             "start":2957,
             "end":2957,
             "file":1,
-            "line":167
+            "line":164
         },
         {
             "start":2958,
             "end":2977,
             "file":1,
-            "line":168
+            "line":165
         },
         {
             "start":2978,
             "end":3033,
             "file":1,
-            "line":169
+            "line":166
         },
         {
             "start":3034,
             "end":3099,
             "file":1,
-            "line":170
+            "line":167
         },
         {
             "start":3100,
             "end":3165,
             "file":1,
-            "line":171
+            "line":168
         },
         {
             "start":3166,
             "end":3237,
             "file":1,
-            "line":172
+            "line":169
         },
         {
             "start":3238,
             "end":3308,
             "file":1,
-            "line":173
+            "line":170
         },
         {
             "start":3309,
             "end":3330,
             "file":1,
-            "line":175
+            "line":172
         },
         {
             "start":3331,
             "end":3352,
             "file":1,
-            "line":176
+            "line":173
         },
         {
             "start":3353,
             "end":3380,
             "file":1,
-            "line":177
+            "line":174
         },
         {
             "start":3381,
             "end":3407,
             "file":1,
-            "line":178
+            "line":175
         },
         {
             "start":3408,
             "end":3463,
             "file":1,
-            "line":180
+            "line":177
         },
         {
             "start":3464,
             "end":3525,
             "file":1,
-            "line":181
+            "line":178
         },
         {
             "start":3526,
             "end":3581,
             "file":1,
-            "line":182
+            "line":179
         },
         {
             "start":3582,
             "end":3637,
             "file":1,
-            "line":183
+            "line":180
         },
         {
             "start":3638,
             "end":3693,
             "file":1,
-            "line":184
+            "line":181
         },
         {
             "start":3694,
             "end":3749,
             "file":1,
-            "line":185
+            "line":182
         },
         {
             "start":3750,
             "end":3750,
             "file":1,
-            "line":186
+            "line":183
         },
         {
             "start":3751,
             "end":3760,
             "file":1,
-            "line":187
+            "line":184
         },
         {
             "start":3763,
             "end":3772,
             "file":1,
-            "line":188
+            "line":185
         }
     ]
 }

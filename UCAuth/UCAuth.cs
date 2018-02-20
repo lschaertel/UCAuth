@@ -75,8 +75,6 @@ namespace Neo.SmartContract
         }
         private static object encryptData()
         {
-            string test;
-            
             return false;
         }
         private static object decryptData()
