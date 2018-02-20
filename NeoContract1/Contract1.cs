@@ -10,6 +10,10 @@ namespace Neo.SmartContract
     {
         public static object Main(string operation, params object[] args)
         {
+            //            byte[] domainNo = Storage.Get(Storage.CurrentContext, ownerAddress.Concat(domain));
+
+            Storage.Put(Storage.CurrentContext, "testKey".AsByteArray(), 51);
+            Runtime.Notify(Storage.Get(Storage.CurrentContext, "testKey".AsByteArray()));
             switch (operation)
             {
                 case "setStorage":
@@ -51,6 +55,7 @@ namespace Neo.SmartContract
             byte[] domainNo = ownerAddress.Concat(amountDomains);
             byte[] domainName = ownerAddress.Concat(domain);
 
+            
             if (!checkExisting(domainName))
             {
                 byte[] domainUsername = domainNo.Concat("username".AsByteArray());
@@ -63,6 +68,7 @@ namespace Neo.SmartContract
                 Storage.Put(Storage.CurrentContext, domainUsername, username);
                 Storage.Put(Storage.CurrentContext, domainPassword, password);
                 Storage.Put(Storage.CurrentContext, ownerAddress, amountDomains);
+                Runtime.Notify(Storage.Get(Storage.CurrentContext, ownerAddress));
 
                 Runtime.Notify("ownerAddress", ownerAddress);
                 Runtime.Notify("domainNo: ", domainNo);
@@ -81,6 +87,7 @@ namespace Neo.SmartContract
             int counterResults = 0;
             byte[] ownerAddress = pubKey.AsByteArray();
             BigInteger amountDomains = Storage.Get(Storage.CurrentContext, ownerAddress).AsBigInteger();
+            Runtime.Notify(amountDomains);
             object[] results = new object[(int)amountDomains - 48];
             for (BigInteger i = 49; i <= amountDomains;)
             {
@@ -125,6 +132,9 @@ namespace Neo.SmartContract
             byte[] ownerAddress = pubKey.AsByteArray();
             byte[] domain = (byte[])args[0];
             byte[] domainNo = Storage.Get(Storage.CurrentContext, ownerAddress.Concat(domain));
+            Runtime.Notify(domain);
+            Runtime.Notify(ownerAddress);
+            Runtime.Notify(domainNo);
             if (domainNo == null) return false;
 
             byte[] domainUsername = domainNo.Concat("username".AsByteArray());
@@ -138,8 +148,11 @@ namespace Neo.SmartContract
             Storage.Delete(Storage.CurrentContext, domainPassword);
             //Storage.Delete(Storage.CurrentContext, encryptionType);
             //Storage.Delete(Storage.CurrentContext, encryptionKey);
+            Runtime.Notify(Storage.Get(Storage.CurrentContext, ownerAddress).AsBigInteger());
+            var result = Storage.Get(Storage.CurrentContext, ownerAddress).AsBigInteger() - 1;
 
             Storage.Put(Storage.CurrentContext, ownerAddress, (Storage.Get(Storage.CurrentContext, ownerAddress).AsBigInteger() - 1));
+            Runtime.Notify(Storage.Get(Storage.CurrentContext, ownerAddress));
             rearrangeStorage(ownerAddress, domainNo, domain);
 
             return true;
@@ -154,10 +167,18 @@ namespace Neo.SmartContract
             {
                 byte[] domainNo = Storage.Get(Storage.CurrentContext, ownerAddress.Concat((amountDomains + 1).AsByteArray()));
                 byte[] domain = Storage.Get(Storage.CurrentContext, domainNo);
-                byte[] domainUsername = domainNo.Concat("username".AsByteArray());
-                byte[] domainPassword = domainNo.Concat("password".AsByteArray());
-                byte[] encryptionType = domainNo.Concat("encryptiontype".AsByteArray());
-                byte[] encryptionKey = domainNo.Concat("encryptionkey".AsByteArray());
+                byte[] domainUsername = Storage.Get(Storage.CurrentContext, domainNo.Concat("username".AsByteArray()));
+                byte[] domainPassword = Storage.Get(Storage.CurrentContext, domainNo.Concat("password".AsByteArray()));
+                byte[] encryptionType = Storage.Get(Storage.CurrentContext, domainNo.Concat("encryptiontype".AsByteArray()));
+                byte[] encryptionKey = Storage.Get(Storage.CurrentContext, domainNo.Concat("encryptionkey".AsByteArray()));
+
+                Runtime.Notify(domainNo);
+                Runtime.Notify(domain);
+                Runtime.Notify(domainUsername);
+                Runtime.Notify(domainPassword);
+                Runtime.Notify(encryptionType);
+                Runtime.Notify(encryptionKey);
+
 
                 byte[] domainUsernameDeleted = deletedDomainNo.Concat("username".AsByteArray());
                 byte[] domainPasswordDeleted = deletedDomainNo.Concat("password".AsByteArray());
@@ -167,20 +188,10 @@ namespace Neo.SmartContract
                 Storage.Put(Storage.CurrentContext, deletedDomainNo, domain);
                 Storage.Put(Storage.CurrentContext, ownerAddress.Concat(domain), domainNo);
                 Storage.Put(Storage.CurrentContext, domainUsernameDeleted, domainUsername);
-
+                Storage.Put(Storage.CurrentContext, domainPasswordDeleted, domainPassword);
+                Storage.Put(Storage.CurrentContext, encryptionTypeDeleted, encryptionType);
+                Storage.Put(Storage.CurrentContext, encryptionKeyDeleted, encryptionKey);
             }
-
-            byte[] test1 = "AGbvNPxAfUC11yGZWr6LENDPDamRTNWvde1".AsByteArray();
-            byte[] test2 = "AGbvNPxAfUC11yGZWr6LENDPDamRTNWvde2".AsByteArray();
-
-            Runtime.Notify(test1);
-            Runtime.Notify(test2);
-            Runtime.Notify(test1.Length);
-            var test = test2[test2.Length - 1];
-            Runtime.Notify(test);
-
-            //if (deletedDomainNo == ownerAddress.Concat(amountDomains)) ;
-
             return true;
         }
     }

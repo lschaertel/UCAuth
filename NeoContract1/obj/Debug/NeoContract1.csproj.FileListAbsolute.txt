@@ -8,7 +8,6 @@ c:\users\ludwig\source\repos\NeoContract1\NeoContract1\obj\Debug\NeoContract1.pd
 C:\Users\Administrator\Documents\GitHub\NeoTestContract\NeoContract1\bin\Debug\NeoContract1.dll
 C:\Users\Administrator\Documents\GitHub\NeoTestContract\NeoContract1\bin\Debug\NeoContract1.pdb
 C:\Users\Administrator\Documents\GitHub\NeoTestContract\NeoContract1\bin\Debug\Neo.SmartContract.Framework.dll
-C:\Users\Administrator\Documents\GitHub\NeoTestContract\NeoContract1\obj\Debug\NeoContract1.csprojResolveAssemblyReference.cache
 C:\Users\Administrator\Documents\GitHub\NeoTestContract\NeoContract1\obj\Debug\NeoContract1.csproj.CoreCompileInputs.cache
 C:\Users\Administrator\Documents\GitHub\NeoTestContract\NeoContract1\obj\Debug\NeoContract1.dll
 C:\Users\Administrator\Documents\GitHub\NeoTestContract\NeoContract1\obj\Debug\NeoContract1.pdb
@@ -19,3 +18,4 @@ C:\Users\Ludwig\Documents\GitHub\NeoTestContract\NeoContract1\obj\Debug\NeoContr
 C:\Users\Ludwig\Documents\GitHub\NeoTestContract\NeoContract1\bin\Debug\NeoContract1.dll
 C:\Users\Ludwig\Documents\GitHub\NeoTestContract\NeoContract1\bin\Debug\NeoContract1.pdb
 C:\Users\Ludwig\Documents\GitHub\NeoTestContract\NeoContract1\bin\Debug\Neo.SmartContract.Framework.dll
+C:\Users\Administrator\Documents\GitHub\NeoTestContract\NeoContract1\obj\Debug\NeoContract1.csprojResolveAssemblyReference.cache
