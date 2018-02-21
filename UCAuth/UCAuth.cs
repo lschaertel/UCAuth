@@ -27,59 +27,89 @@ namespace Neo.SmartContract
         //Adds a new Domain-Credencial to the given public key and relevant parameters
         private static Boolean setStorage(string pubKey, object[] args)
         {
-            byte[] ownerAddress = pubKey.AsByteArray();
-            byte[] domain = (byte[])args[0];
-            byte[] username = (byte[])args[1];
-            byte[] password = (byte[])args[2];
-            //byte[] encryptionType = (byte[])args[3]; //ToDo: enable encryption - EncryptionTypes: None/Password/Privatekey (Hash?))
-            //byte[] encryption = (byte[])args[4];
-
-            byte[] amountDomains = Storage.Get(Storage.CurrentContext, ownerAddress);
-                    //return rearrangeStorage((byte[])args[0], (byte[])args[1]);
-            if (amountDomains == null)
+            if (args.Length >= 5)
             {
-                Storage.Put(Storage.CurrentContext, ownerAddress, 49);
-                amountDomains = Storage.Get(Storage.CurrentContext, ownerAddress);
-            }
-            else
-            {
-                amountDomains = (amountDomains.AsBigInteger() + 1).AsByteArray();
-            }
-            Runtime.Notify("ownerAddress: ", ownerAddress);
-            Runtime.Notify("domain: ", domain);
-            Runtime.Notify("amountDomains: ", amountDomains);
+                byte[] ownerAddress = pubKey.AsByteArray();
+                byte[] domain = (byte[])args[0];
+                byte[] username = (byte[])args[1];
+                byte[] password = (byte[])args[2];
+                byte[] encryptionKey = (byte[])args[3];
+                byte[] encryptionMethod = (byte[])args[4]; //ToDo: enable encryption - EncryptionTypes: None/Password/Privatekey (Hash?))
+                
 
-            byte[] domainNo = ownerAddress.Concat(amountDomains);
-            byte[] domainName = ownerAddress.Concat(domain);
+                byte[] amountDomains = Storage.Get(Storage.CurrentContext, ownerAddress);
+                //return rearrangeStorage((byte[])args[0], (byte[])args[1]);
+                if (amountDomains == null)
+                {
+                    Storage.Put(Storage.CurrentContext, ownerAddress, 49);
+                    amountDomains = Storage.Get(Storage.CurrentContext, ownerAddress);
+                }
+                else
+                {
+                    amountDomains = (amountDomains.AsBigInteger() + 1).AsByteArray();
+                }
+                Runtime.Notify("ownerAddress: ", ownerAddress);
+                Runtime.Notify("domain: ", domain);
+                Runtime.Notify("amountDomains: ", amountDomains);
+
+                byte[] domainNo = ownerAddress.Concat(amountDomains);
+                byte[] domainName = ownerAddress.Concat(domain);
+
+                if (!checkExisting(domainName))
+                {
+                    byte[] domainUsername = domainNo.Concat("username".AsByteArray());
+                    byte[] domainPassword = domainNo.Concat("password".AsByteArray());
+                    byte[] domainEncryptionMethod = domainNo.Concat("encryptionmethod".AsByteArray());
+                    byte[] domainEncryptionKey = domainNo.Concat("encryptionkey".AsByteArray());
+
+                    Storage.Put(Storage.CurrentContext, domainNo, domain);
+                    Storage.Put(Storage.CurrentContext, domainName, domainNo);
+                    Storage.Put(Storage.CurrentContext, domainUsername, username);
+                    Storage.Put(Storage.CurrentContext, domainPassword, password);
+                    Storage.Put(Storage.CurrentContext, ownerAddress, amountDomains);
+                    Storage.Put(Storage.CurrentContext, domainEncryptionMethod, encryptionMethod);
+                    var encryptionResult = encryptData(encryptionMethod, encryptionKey);
+                    if (encryptionResult == null) return false;
+                    Storage.Put(Storage.CurrentContext, domainEncryptionKey, encryptionResult);
+
+                    Runtime.Notify("domainNo: ", domainNo);
+                    Runtime.Notify("domainName: ", domainName);
+                    Runtime.Notify("domainUsername: ", domainUsername);
+                    Runtime.Notify("domainEncryptionKey", domainEncryptionKey);
+                    Runtime.Notify("domainEncryptionMethod", domainEncryptionMethod);
+
+                    return true;
+                }
+            }
+            return false;
+        }
+        private static byte[] encryptData(byte[] encryptionMethod, byte[] encryptionKey)
+        {
+            if (encryptionMethod == "password".AsByteArray()) return encryptionKey;
+            if (encryptionMethod == "Sha1".AsByteArray()) return Sha1(encryptionKey);
+            if (encryptionMethod == "Sha256".AsByteArray()) return Sha256(encryptionKey);
+            if (encryptionMethod == "Hash160".AsByteArray()) return Hash160(encryptionKey);
+            if (encryptionMethod == "Hash256".AsByteArray()) return Hash256(encryptionKey);
+
+            Runtime.Notify("encryptionMethod: ", encryptionMethod);
+
+            return null;
+        }
+        //Authenticate a request with a given Encryption-Key Value and compares it with the stored Key-Value behind the given domain
+        private static Boolean authenticateEncryption(byte[] owner, byte[] domain, byte[] encryptionKeyParm)
+        {
+            byte[] domainNo = Storage.Get(Storage.CurrentContext, owner.Concat(domain));
+            byte[] domainEncryptionMethod = domainNo.Concat("encryptionmethod".AsByteArray());
+            byte[] domainEncryptionKey = domainNo.Concat("encryptionkey".AsByteArray());
+
+            Runtime.Notify(domainNo);
+            Runtime.Notify(domainEncryptionMethod);
+            Runtime.Notify(domainEncryptionKey);
+
+            var encryptionMethod = Storage.Get(Storage.CurrentContext, domainEncryptionMethod);
+            var encryptionKey = Storage.Get(Storage.CurrentContext, domainEncryptionKey);
+            if (encryptData(encryptionMethod, encryptionKeyParm) == encryptionKey) return true;
             
-            if (!checkExisting(domainName))
-            {
-                byte[] domainUsername = domainNo.Concat("username".AsByteArray());
-                byte[] domainPassword = domainNo.Concat("password".AsByteArray());
-                byte[] encryptionType = domainNo.Concat("encryptiontype".AsByteArray());
-                byte[] encryptionKey = domainNo.Concat("encryptionkey".AsByteArray());
-
-                Storage.Put(Storage.CurrentContext, domainNo, domain);
-                Storage.Put(Storage.CurrentContext, domainName, domainNo);
-                Storage.Put(Storage.CurrentContext, domainUsername, username);
-                Storage.Put(Storage.CurrentContext, domainPassword, password);
-                Storage.Put(Storage.CurrentContext, ownerAddress, amountDomains);
-                
-                Runtime.Notify("domainNo: ", domainNo);
-                Runtime.Notify("domainName: ", domainName);
-                Runtime.Notify("domainUsername: ", domainUsername);
-                
-                return true;
-            }
-            return false;
-        }
-        private static object encryptData()
-        {
-            return false;
-        }
-        private static object decryptData()
-        {
-
             return false;
         }
 
@@ -89,6 +119,7 @@ namespace Neo.SmartContract
             int counterResults = 0;
             byte[] ownerAddress = pubKey.AsByteArray();
             BigInteger amountDomains = Storage.Get(Storage.CurrentContext, ownerAddress).AsBigInteger();
+            if (amountDomains == 0) return null;
             object[] results = new object[(int)amountDomains - 48];
 
             Runtime.Notify("amountDomains: ", amountDomains);
@@ -117,6 +148,9 @@ namespace Neo.SmartContract
             byte[] ownerAddress = pubKey.AsByteArray();
             byte[] domain = (byte[])args[0];
             byte[] domainNo = Storage.Get(Storage.CurrentContext, ownerAddress.Concat(domain));
+            byte[] encryptionKey = ((byte[])args[1]);
+
+            if (!authenticateEncryption(ownerAddress, domain, encryptionKey)) return false;
             if (domainNo == null) return false;
 
             object[] results = new object[3];
@@ -131,20 +165,22 @@ namespace Neo.SmartContract
             byte[] ownerAddress = pubKey.AsByteArray();
             byte[] domain = (byte[])args[0];
             byte[] domainNo = Storage.Get(Storage.CurrentContext, ownerAddress.Concat(domain));
+            byte[] encryptionKey = (byte[])args[1];
             Runtime.Notify("deletedDomain:", domain);
             if (domainNo == null) return false;
+            if (!authenticateEncryption(ownerAddress, domain, encryptionKey)) return false;
 
             byte[] domainUsername = domainNo.Concat("username".AsByteArray());
             byte[] domainPassword = domainNo.Concat("password".AsByteArray());
-            byte[] encryptionType = domainNo.Concat("encryptiontype".AsByteArray());
-            byte[] encryptionKey = domainNo.Concat("encryptionkey".AsByteArray());
+            byte[] domainencryptionMethod = domainNo.Concat("encryptionmethod".AsByteArray());
+            byte[] domainencryptionKey = domainNo.Concat("encryptionkey".AsByteArray());
 
             Storage.Delete(Storage.CurrentContext, domainNo);
             Storage.Delete(Storage.CurrentContext, ownerAddress.Concat(domain));
             Storage.Delete(Storage.CurrentContext, domainUsername);
             Storage.Delete(Storage.CurrentContext, domainPassword);
-            //Storage.Delete(Storage.CurrentContext, encryptionType);
-            //Storage.Delete(Storage.CurrentContext, encryptionKey);
+            Storage.Delete(Storage.CurrentContext, domainencryptionMethod);
+            Storage.Delete(Storage.CurrentContext, domainencryptionKey);
 
             Storage.Put(Storage.CurrentContext, ownerAddress, (Storage.Get(Storage.CurrentContext, ownerAddress).AsBigInteger() - 1));
 
@@ -166,19 +202,19 @@ namespace Neo.SmartContract
                 byte[] domain = Storage.Get(Storage.CurrentContext, domainNo);
                 byte[] domainUsername = Storage.Get(Storage.CurrentContext, domainNo.Concat("username".AsByteArray()));
                 byte[] domainPassword = Storage.Get(Storage.CurrentContext, domainNo.Concat("password".AsByteArray()));
-                byte[] encryptionType = Storage.Get(Storage.CurrentContext, domainNo.Concat("encryptiontype".AsByteArray()));
+                byte[] encryptionMethod = Storage.Get(Storage.CurrentContext, domainNo.Concat("encryptionmethod".AsByteArray()));
                 byte[] encryptionKey = Storage.Get(Storage.CurrentContext, domainNo.Concat("encryptionkey".AsByteArray()));
 
                 byte[] domainUsernameDeleted = deletedDomainNo.Concat("username".AsByteArray());
                 byte[] domainPasswordDeleted = deletedDomainNo.Concat("password".AsByteArray());
-                byte[] encryptionTypeDeleted = deletedDomainNo.Concat("encryptiontype".AsByteArray());
+                byte[] encryptionMethodDeleted = deletedDomainNo.Concat("encryptionmethod".AsByteArray());
                 byte[] encryptionKeyDeleted = deletedDomainNo.Concat("encryptionkey".AsByteArray());
 
                 Storage.Put(Storage.CurrentContext, deletedDomainNo, domain);
                 Storage.Put(Storage.CurrentContext, ownerAddress.Concat(domain), domainNo);
                 Storage.Put(Storage.CurrentContext, domainUsernameDeleted, domainUsername);
                 Storage.Put(Storage.CurrentContext, domainPasswordDeleted, domainPassword);
-                Storage.Put(Storage.CurrentContext, encryptionTypeDeleted, encryptionType);
+                Storage.Put(Storage.CurrentContext, encryptionMethodDeleted, encryptionMethod);
                 Storage.Put(Storage.CurrentContext, encryptionKeyDeleted, encryptionKey);
             }
             return true;
